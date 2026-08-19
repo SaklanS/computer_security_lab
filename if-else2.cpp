@@ -3,37 +3,37 @@
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    int a, b, c;
+    cin >> a >> b >> c;
 
-    int A, B, C;
-    cin >> A >> B >> C;
-
-    if (A <= B && B <= C) {
-        cout << A << endl << B << endl << C << endl;
-    }
-    else if (A <= C && C <= B) {
-        cout << A << endl << C << endl << B << endl;
-    }
-    else if (B <= A && A <= C) {
-        cout << B << endl << A << endl << C << endl;
-    }
-    else if (B <= C && C <= A) {
-        cout << B << endl << C << endl << A << endl;
-    }
-    else if (C <= A && A <= B) {
-        cout << C << endl << A << endl << B << endl;
+    if (a <= b) {
+        if (b <= c) {
+            cout << a << endl << b << endl << c << endl;
+        }
+        else {
+            if (a <= c)
+                cout << a << endl << c << endl << b << endl;
+            else
+                cout << c << endl << a << endl << b << endl;
+        }
     }
     else {
-        cout << C << endl << B << endl << A << endl;
+        if (a <= c) {
+            cout << b << endl << a << endl << c << endl;
+        }
+        else {
+            if (b <= c)
+                cout << b << endl << c << endl << a << endl;
+            else
+                cout << c << endl << b << endl << a << endl;
+        }
     }
 
     cout << endl;
 
-    // Original order
-    cout << A << endl;
-    cout << B << endl;
-    cout << C << endl;
+    cout << a << endl;
+    cout << b << endl;
+    cout << c << endl;
 
     return 0;
 }
